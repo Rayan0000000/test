@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Text Viewer</title>
+</head>
+<body>
+    <pre id="raw-content"></pre>
+    <script>
+        fetch('https://github.com/Rayan0000000/test/raw/main/tester321.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('raw-content').textContent = data;
+            })
+            .catch(error => console.error('Error fetching file:', error));
+    </script>
+</body>
+</html>
